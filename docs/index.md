@@ -10,7 +10,9 @@ for each field.
 
 ## Why is there alot of copy/ paste
 
-Because I am not good enough with words to really describe what things do, so they are copied from the below sites:
+Despite taking pride in my documentation, I trust the maintainers of the Kubernetes project more to write the descriptions.
+
+Descriptions are copied from the below sites:
 
 1. [https://kubernetes.io/docs/](https://kubernetes.io/docs/)
 
