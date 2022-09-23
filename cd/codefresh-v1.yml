@@ -1,0 +1,36 @@
+version: "1.0"
+stages:
+  - "setup"
+  - "mkdocs-build"
+  - "deploy"
+
+steps:
+  clone:
+    title: "Cloning repository"
+    type: "git-clone"
+    repo: "userbradley/kubernetes-manifests-site"
+    revision: "${{CF_BRANCH}}"
+    git: "github"
+    stage: "setup"
+
+  build_mkdocs:
+    title: Build Mkdocs site
+    stage: "mkdocs-build"
+    image: "squidfunk/mkdocs-material"
+    working_directory: "./kube-site/"
+    volumes:
+      - ./:/docs
+      - kube-site/content/site:/output
+    cmd:
+      - "build"
+
+  transfer:
+    title: "SCP to web server"
+    type: "freestyle"
+    stage: "deploy"
+    image: "ictu/sshpass:latest"
+    commands:
+      - "mkdir /.ssh"
+      - "echo ${{codefresh_ssh_key}} | base64 -d > /.ssh/id_rsa"
+      - "chmod 600 /.ssh/id_rsa"
+      - scp -o "StrictHostKeyChecking no" -i /.ssh/id_rsa -r /codefresh/volume/kube-site/content/site/* root@webservices.breadinfra.net:/var/www/kube-site
