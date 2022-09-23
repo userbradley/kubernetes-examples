@@ -17,10 +17,7 @@ steps:
     title: Build Mkdocs site
     stage: "mkdocs-build"
     image: "squidfunk/mkdocs-material"
-    working_directory: "./kube-site/"
-    volumes:
-      - ./:/docs
-      - kube-site/content/site:/output
+    working_directory: "/codefresh/volume/kubernetes-manifests-site"
     cmd:
       - "build"
 
@@ -33,4 +30,4 @@ steps:
       - "mkdir /.ssh"
       - "echo ${{codefresh_ssh_key}} | base64 -d > /.ssh/id_rsa"
       - "chmod 600 /.ssh/id_rsa"
-      - scp -o "StrictHostKeyChecking no" -i /.ssh/id_rsa -r /codefresh/volume/kube-site/content/site/* root@webservices.breadinfra.net:/var/www/kube-site
+      - scp -o "StrictHostKeyChecking no" -i /.ssh/id_rsa -r /codefresh/volume/"kubernetes-manifests-site/site/* "${{server}}"

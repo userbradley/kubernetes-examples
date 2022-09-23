@@ -10,11 +10,11 @@ nav:
 repo_name: userbradley/kubernetes-manifests-site
 repo_url: https://github.com/userbradley/kubernetes-manifests-site
 edit_uri: edit/master/docs/
-
-
 site_name: Kubernetes Manifests
 site_url: https://kubernetes.breadnet.co.uk
 site_description: Kubernetes Manifest files and Examples
+
+
 theme:
   name: material
   favicon: https://breadnet.co.uk/favicon.ico
@@ -58,6 +58,8 @@ theme:
     - search.share
     - search.highlight
    # - content.code.annotate # Adds code block annotations globally
+
+
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -66,6 +68,23 @@ markdown_extensions:
   - md_in_html
   - md_in_html
 
+plugins:
+  - git-revision-date-localized:
+      type: iso_datetime
+      enable_creation_date: true
 
 
-
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://uk.linkedin.com/in/bradley-stannard
+      name: My Linkedin
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/userbradley
+      name: My Github
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:webmaster@breadnet.co.uk
+    - icon: fontawesome/solid/file-lines #https://fontawesome.com/docs/web/setup/upgrade/whats-changed#icons-renamed-in-version-6
+      link: https://breadnet.co.uk
+      name: My Website
+  generator: false
