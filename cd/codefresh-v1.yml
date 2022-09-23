@@ -30,4 +30,4 @@ steps:
       - "mkdir /.ssh"
       - "echo ${{codefresh_ssh_key}} | base64 -d > /.ssh/id_rsa"
       - "chmod 600 /.ssh/id_rsa"
-      - scp -o "StrictHostKeyChecking no" -i /.ssh/id_rsa -r /codefresh/volume/"kubernetes-manifests-site/site/* "${{server}}"
+      - scp -o "StrictHostKeyChecking no" -i /.ssh/id_rsa -r /codefresh/volume/kubernetes-manifests-site/site/* "${{server}}"
