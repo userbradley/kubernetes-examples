@@ -1,0 +1,71 @@
+nav:
+  - Home: index.md
+  - Built in:
+      - "Deployment": builtin/deployment.md
+      - Service: builtin/service.md
+  - Argo:
+      - Repo: argo/repo.md
+  - Template: template.md
+
+repo_name: userbradley/kubernetes-manifests-site
+repo_url: https://github.com/userbradley/kubernetes-manifests-site
+edit_uri: edit/master/docs/
+
+
+site_name: Kubernetes Manifests
+site_url: https://kubernetes.breadnet.co.uk
+site_description: Kubernetes Manifest files and Examples
+theme:
+  name: material
+  favicon: https://breadnet.co.uk/favicon.ico
+  logo: https://breadnet.co.uk/favicon.png
+  icon:
+    repo: fontawesome/brands/github-alt
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant # IDK
+    - navigation.tracking #Anchor links
+    - navigation.expand #Exapnds the navigation in the UI
+    - content.code.annotate
+   # - toc.integrate
+     #- content.tabs.link
+    # - navigation.top
+    #- navigation.tabs #Puts the pages in to nice tabs at the top
+   # - navigation.expand
+   # - navigation.instant
+    - search.share
+    - search.highlight
+   # - content.code.annotate # Adds code block annotations globally
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - md_in_html
+
+
+
+
