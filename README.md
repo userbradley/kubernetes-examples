@@ -11,7 +11,7 @@ This is a public site I run to document the Kubernetes manifest files as well as
 ## Why this exists
 
 I had trouble when learning Kubernetes with all the possibilities for the files, so I made this site (Will always be in Development)
-for my self and peers so we have a quick reference sheet
+for my self and peers, so we have a quick reference sheet.
 
 ## Where can I access it
 
@@ -25,9 +25,9 @@ for my self and peers so we have a quick reference sheet
 
 ## Adding pages
 
-I encourage people to add pages. Please copy and paste from the `docs/template.md` and then find and replace parts etc etc.
+I encourage people to add pages. Please copy and paste from the `docs/template.md` and then find and replace parts etc. etc.
 
-Once done, open a PR and I will review etc etc.
+Once done, open a PR and I will review etc. etc.
 
 ## Building locally
 
