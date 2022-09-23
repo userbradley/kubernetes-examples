@@ -1,5 +1,9 @@
 # Kubernetes Manifests documentation
 
+[![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/breadnet/Static%20sites%2FKubernetes%20Site?type=cf-2)]( https://g.codefresh.io/public/accounts/breadnet/pipelines/new/632df06584b536311cef3e1b)
+[![wakatime](https://wakatime.com/badge/user/befd4d51-df71-4caa-90ba-09a83c0524b0/project/6be1f56d-02cb-4305-8a66-6e36f53a82a9.svg)](https://wakatime.com/badge/user/befd4d51-df71-4caa-90ba-09a83c0524b0/project/6be1f56d-02cb-4305-8a66-6e36f53a82a9)
+
+
 ## What is this
 
 This is a public site I run to document the Kubernetes manifest files as well as all the possible values for them.
