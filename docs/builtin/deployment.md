@@ -44,6 +44,8 @@ metadata:
 Gives the Deployment a name
 
 ```yaml
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: hello-v3
 ```
@@ -54,6 +56,8 @@ The namespace the Deployment should go to
 
 
 ```yaml
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: hello-v3
   namespace: default
@@ -64,6 +68,8 @@ metadata:
 User readable key/value pairs attached to Deployments
 
 ```yaml
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: hello-v3
   namespace: default
@@ -82,8 +88,8 @@ These are entirely human-readable, and do not affect the deployment programmatic
 Key value pairs added to the deployment. 
 
 ```yaml
+apiVersion: apps/v1
 kind: Deployment
-api: apps/v1
 metadata:
   name: hello-v3
   namespace: default
