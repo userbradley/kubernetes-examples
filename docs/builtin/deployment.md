@@ -9,6 +9,15 @@ A Deployment provides declarative updates for Pods and ReplicaSets.
 You describe a desired state in a Deployment, and the Deployment Controller changes the actual state to the desired 
 state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments.
 
+??? note "Example"
+
+    ``` yaml
+    apiVersion: apps/v1 # (1)!
+    ```
+
+    1.   [API Documentation](#api-version)
+
+    
 ## Deployment Details 
 
 ## API version
@@ -164,11 +173,26 @@ spec:
 
 Defines how the containers will be managed during an update
 
+```yaml hl_lines="14"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-v3
+  namespace: default
+  labels:
+    environment: production
+    app: nginx
+  annotations:
+    imageregistry: "https://hub.docker.com/"
+    bradley: "is cool"
+spec:
+  replicas: 3
+  strategy:
+
+```
 
 
 ---
-
-
 
 
 

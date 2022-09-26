@@ -8,11 +8,29 @@ title: Home
 This site is to hold documentation I make as I go along for Kubernetes manifests that I write, as well as possible values
 for each field.
 
-## Why is there alot of copy/ paste
+## How it works
 
-Despite taking pride in my documentation, I trust the maintainers of the Kubernetes project more to write the descriptions.
+As this site grows, more and more pages will get added to the left navigation bar.
 
-Descriptions are copied from the below sites:
+They default to expanded, but if it's starting to become annoying, I can disable that feature.
 
-1. [https://kubernetes.io/docs/](https://kubernetes.io/docs/)
+At the top of the files, you will be introduced to what the file does. The example of `deployment` is below
 
+
+![](assets/light-deployment.png#only-light)
+![](assets/dark-deployment.png#only-dark)
+
+On the right hand side navigation, it's designed to mirror a manifest file
+
+| Navigation                                                                                    | Manifest file                   |
+|-----------------------------------------------------------------------------------------------|---------------------------------|
+| ![](assets/light-deployment-nav.png#only-light) ![](assets/dark-deployment-nav.png#only-dark) | ![](assets/light-deployment-file.png) |
+
+Finally, there will be an example. This is what I personally see as a usable deployment. 
+
+This can be found under the example box at the top - With links to the relevant sections besides it
+
+![](assets/light-example.png#only-light)
+![](assets/dark-example.png#only-dark)
+
+![](assets/meme.png#only-dark)
