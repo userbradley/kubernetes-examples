@@ -26,7 +26,8 @@ On the right hand side navigation, it's designed to mirror a manifest file
 |-----------------------------------------------------------------------------------------------|---------------------------------|
 | ![](assets/light-deployment-nav.png#only-light) ![](assets/dark-deployment-nav.png#only-dark) | ![](assets/light-deployment-file.png) |
 
-Finally, there will be an example. This is what I personally see as a usable deployment. 
+Finally, there will be an example. This is the full file with all possible variations of the file that I have the time to create.
+You won't be able to actually deploy it, as it's an example
 
 This can be found under the example box at the top - With links to the relevant sections besides it
 
