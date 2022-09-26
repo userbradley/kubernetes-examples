@@ -1,5 +1,6 @@
 nav:
   - Home: index.md
+  - Terms : common/terms.md
   - Built in:
       - "Deployment": builtin/deployment.md
       - Service: builtin/service.md
@@ -67,6 +68,7 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - md_in_html
+  - footnotes
 
 plugins:
   #- git-revision-date-localized:

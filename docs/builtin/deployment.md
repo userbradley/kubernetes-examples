@@ -52,6 +52,7 @@ metadata:
 
 The namespace the Deployment should go to
 
+
 ```yaml
 metadata:
   name: hello-v3
@@ -78,9 +79,41 @@ These are entirely human-readable, and do not affect the deployment programmatic
 
 #### Annotations
 
-Allows you to add annotations to the Deployment
+Key value pairs added to the deployment. 
+
+```yaml
+kind: Deployment
+api: apps/v1
+metadata:
+  name: hello-v3
+  namespace: default
+  labels:
+    environment: production
+    app: nginx
+  annotations:
+    imageregistry: "https://hub.docker.com/"
+    bradley: "is cool"
+
+
+```
+
+You can use Kubernetes annotations to attach arbitrary non-identifying metadata to objects. Clients such as tools and libraries can retrieve this metadata.
+Usually used in helm charts to force a new update when a config map is changed
+
+??? note "New version based on file updates"
+    ```yaml
+      template:
+        metadata:
+          annotations:
+            checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+            checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+    ```
+
+
 
 ---
+
+
 
 
 
