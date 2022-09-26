@@ -106,7 +106,7 @@ metadata:
 You can use Kubernetes annotations to attach arbitrary non-identifying metadata to objects. Clients such as tools and libraries can retrieve this metadata.
 Usually used in helm charts to force a new update when a config map is changed
 
-??? note "New version based on file updates"
+??? note "New version based on file updates [HELM]"
     ```yaml
       template:
         metadata:
