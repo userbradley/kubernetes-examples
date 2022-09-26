@@ -31,7 +31,7 @@ Deployment
 
 ### Metadata
 
-```yaml
+```yaml hl_lines="3"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -43,7 +43,7 @@ metadata:
 
 Gives the Deployment a name
 
-```yaml
+```yaml hl_lines="4"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -55,7 +55,7 @@ metadata:
 The namespace the Deployment should go to
 
 
-```yaml
+```yaml hl_lines="5"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -67,7 +67,7 @@ metadata:
 
 User readable key/value pairs attached to Deployments
 
-```yaml
+```yaml hl_lines="6"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -87,7 +87,7 @@ These are entirely human-readable, and do not affect the deployment programmatic
 
 Key value pairs added to the deployment. 
 
-```yaml
+```yaml hl_lines="9"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -104,9 +104,13 @@ metadata:
 ```
 
 You can use Kubernetes annotations to attach arbitrary non-identifying metadata to objects. Clients such as tools and libraries can retrieve this metadata.
-Usually used in helm charts to force a new update when a config map is changed
 
+
+<!-- 
+
+@todo: come back to this later
 ??? note "New version based on file updates [HELM]"
+    This wo
     ```yaml
       template:
         metadata:
@@ -114,6 +118,51 @@ Usually used in helm charts to force a new update when a config map is changed
             checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
             checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
     ```
+
+-->
+
+## Spec
+
+The specification of the pod(s) running
+
+```yaml hl_lines="12"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-v3
+  namespace: default
+  labels:
+    environment: production
+    app: nginx
+  annotations:
+    imageregistry: "https://hub.docker.com/"
+    bradley: "is cool"
+spec:
+```
+
+### Replicas
+
+Telling Kubernetes how many replicas of the pod to run
+
+```yaml hl_lines="13"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-v3
+  namespace: default
+  labels:
+    environment: production
+    app: nginx
+  annotations:
+    imageregistry: "https://hub.docker.com/"
+    bradley: "is cool"
+spec:
+  replicas: 3
+```
+
+### Strategy
+
+Defines how the containers will be managed during an update
 
 
 
