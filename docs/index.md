@@ -16,6 +16,9 @@ They default to expanded, but if it's starting to become annoying, I can disable
 
 At the top of the files, you will be introduced to what the file does. The example of `deployment` is below
 
+!!! Warning
+    This page is still being developed
+
 
 ![](assets/light-deployment.png#only-light)
 ![](assets/dark-deployment.png#only-dark)
@@ -33,5 +36,17 @@ This can be found under the example box at the top - With links to the relevant 
 
 ![](assets/light-example.png#only-light)
 ![](assets/dark-example.png#only-dark)
+
+## Contributing
+
+As it stands, I don't know if anyone will come across this site, but if you do, and you want to contribute:
+
+Please install `mkdocs` and `material-for-mkdocs` and serve the sight locally (`mkdocs serve`)
+Once you've made your changes, please open a PR to a Dev branch, and I will take a look at it!
+
+
+---
+
+_Please enable dark mode_
 
 ![](assets/meme.png#only-dark)

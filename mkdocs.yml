@@ -2,7 +2,15 @@ nav:
   - Home: index.md
   - Terms : common/terms.md
   - Built in:
-      - "Deployment": builtin/deployment.md
+      - Deployment:
+          - builtin/deployment/index.md
+          - Metadata: builtin/deployment/metadata.md
+          - Spec:
+             - builtin/deployment/spec/index.md
+             - Containers: builtin/deployment/containers.md
+          # - Spec - Containers : builtin/deployment/containers.md
+
+
       - Service: builtin/service.md
   - Argo:
       - Repo: argo/repo.md
@@ -59,6 +67,7 @@ theme:
     - search.share
     - search.highlight
    # - content.code.annotate # Adds code block annotations globally
+    - navigation.indexes #Adds nice navigation
 
 
 markdown_extensions:
@@ -74,6 +83,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true # Pretty check lists
   - tables
