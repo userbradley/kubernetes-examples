@@ -126,7 +126,7 @@ spec:
 
 Key Value pairs used to target the Pods later on.
 
-Should be the same as [Labels](#labels) - But not required
+Should be the same as [Labels](../metadata.md#labels) - But not required
 
 | Name                             | Identical        |
 |----------------------------------|------------------|

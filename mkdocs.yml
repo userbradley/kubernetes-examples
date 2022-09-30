@@ -2,6 +2,7 @@ nav:
   - Home: index.md
   - Terms : common/terms.md
   - Built in:
+      - builtin/index.md
       - Deployment:
           - builtin/deployment/index.md
           - Metadata: builtin/deployment/metadata.md
