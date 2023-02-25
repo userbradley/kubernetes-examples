@@ -1,41 +1,45 @@
 nav:
   - Home: index.md
-  - Terms : common/terms.md
-  - Built in:
-      - builtin/index.md
-      - Deployment:
-          - builtin/deployment/index.md
-          - Metadata: builtin/deployment/metadata.md
-          - Spec:
-             - builtin/deployment/spec/index.md
-             - Containers: builtin/deployment/containers.md
-          # - Spec - Containers : builtin/deployment/containers.md
+  - Deployment:
+      - Basic: deployment/basic.md
+      - Ports: deployment/ports.md
+      - Init: deployment/init.md
 
-
-      - Service: builtin/service.md
-  - Argo:
-      - Repo: argo/repo.md
-  - Template: template.md
-
-repo_name: userbradley/kubernetes-manifests-site
-repo_url: https://github.com/userbradley/kubernetes-manifests-site
+repo_name: Kubernetes Examples
+repo_url: https://github.com/userbradley/kubernetes-examples
 edit_uri: edit/master/docs/
-site_name: Kubernetes Manifests
+site_name: Kubernetes Examples
 site_url: https://kubernetes.breadnet.co.uk
-site_description: Kubernetes Manifest files and Examples
+site_description: Kubernetes Manifest Examples
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://uk.linkedin.com/in/bradley-stannard
+      name: My Linkedin
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/userbradley
+      name: My Github
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:webmaster@breadnet.co.uk
+    - icon: fontawesome/solid/file-lines #https://fontawesome.com/docs/web/setup/upgrade/whats-changed#icons-renamed-in-version-6
+      link: https://breadnet.co.uk
+      name: My Website
+  generator: false
 
 
 theme:
   name: material
-  favicon: https://breadnet.co.uk/favicon.ico
-  logo: https://breadnet.co.uk/favicon.png
+  favicon: favicon.ico
+  logo: favicon.png
   icon:
     repo: fontawesome/brands/github-alt
     admonition:
       note: octicons/tag-16
       abstract: octicons/checklist-16
       info: octicons/info-16
-      tip: octicons/squirrel-16
+      # tip: octicons/squirrel-16
       success: octicons/check-16
       question: octicons/question-16
       warning: octicons/alert-16
@@ -47,34 +51,33 @@ theme:
 
   palette:
     - scheme: default
+      primary: !ENV [color, ""]
+      accent: !ENV [color, ""]
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
+      primary: !ENV [color, ""]
+      accent: !ENV [color, ""]
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
   features:
     - navigation.instant # IDK
     - navigation.tracking #Anchor links
-    - navigation.expand #Exapnds the navigation in the UI
+    #- !ENV [nav, ""]#navigation.expand #Exapnds the navigation in the UI, disabled by default, but enabled in dev
     - content.code.annotate
-   # - toc.integrate
-     #- content.tabs.link
-    # - navigation.top
-    #- navigation.tabs #Puts the pages in to nice tabs at the top
-   # - navigation.expand
-   # - navigation.instant
+    - content.code.copy
     - search.share
-    - search.highlight
-   # - content.code.annotate # Adds code block annotations globally
-    - navigation.indexes #Adds nice navigation
+    # - search.highlight
+    - navigation.top # back to top of page
+    - navigation.indexes # Allows index.md pages
+    - content.tabs.link
 
 
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
   - attr_list
   - md_in_html
   - md_in_html
@@ -93,23 +96,15 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.snippets
+  - abbr
+  - footnotes
+  - pymdownx.superfences: # https://mermaid.js.org/syntax/flowchart.html and https://squidfunk.github.io/mkdocs-material/reference/diagrams/#configuration
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
 plugins:
-  #- git-revision-date-localized:
-  #    type: iso_datetime
-  #    enable_creation_date: true
-
-
-extra:
-  social:
-    - icon: fontawesome/brands/linkedin
-      link: https://uk.linkedin.com/in/bradley-stannard
-      name: My Linkedin
-    - icon: fontawesome/brands/github-alt
-      link: https://github.com/userbradley
-      name: My Github
-    - icon: fontawesome/solid/paper-plane
-      link: mailto:webmaster@breadnet.co.uk
-    - icon: fontawesome/solid/file-lines #https://fontawesome.com/docs/web/setup/upgrade/whats-changed#icons-renamed-in-version-6
-      link: https://breadnet.co.uk
-      name: My Website
-  generator: false
+  - search
+  - social
