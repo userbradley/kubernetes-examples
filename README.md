@@ -1,5 +1,5 @@
 ![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/breadnet/Static%20sites%2FKubernetes%20Site?type=cf-1&key=eyJhbGciOiJIUzI1NiJ9.NjA2NDk2ODIzMDk5OTgxZTRjODFmMTNi.5gYRawM6ODqOOVHDq1eDn1cma2Df2_jcXcQ4oAsb9wM)
-[![wakatime](https://wakatime.com/badge/user/befd4d51-df71-4caa-90ba-09a83c0524b0/project/d8d255aa-cd90-4619-97dc-e0fd99677606.svg)](https://wakatime.com/badge/user/befd4d51-df71-4caa-90ba-09a83c0524b0/project/d8d255aa-cd90-4619-97dc-e0fd99677606)
+![wakatime](https://wakatime.com/badge/user/befd4d51-df71-4caa-90ba-09a83c0524b0/project/d8d255aa-cd90-4619-97dc-e0fd99677606.svg)
 
 ## What is this
 
