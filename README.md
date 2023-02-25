@@ -1,6 +1,5 @@
-[![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/breadnet/Static%20sites%2FKubernetes%20Site?type=cf-2)]( https://g.codefresh.io/public/accounts/breadnet/pipelines/new/632df06584b536311cef3e1b)
-[![wakatime](https://wakatime.com/badge/user/befd4d51-df71-4caa-90ba-09a83c0524b0/project/6be1f56d-02cb-4305-8a66-6e36f53a82a9.svg)](https://wakatime.com/badge/user/befd4d51-df71-4caa-90ba-09a83c0524b0/project/6be1f56d-02cb-4305-8a66-6e36f53a82a9)
-
+![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/breadnet/Static%20sites%2FKubernetes%20Site?type=cf-1&key=eyJhbGciOiJIUzI1NiJ9.NjA2NDk2ODIzMDk5OTgxZTRjODFmMTNi.5gYRawM6ODqOOVHDq1eDn1cma2Df2_jcXcQ4oAsb9wM)
+[![wakatime](https://wakatime.com/badge/user/befd4d51-df71-4caa-90ba-09a83c0524b0/project/d8d255aa-cd90-4619-97dc-e0fd99677606.svg)](https://wakatime.com/badge/user/befd4d51-df71-4caa-90ba-09a83c0524b0/project/d8d255aa-cd90-4619-97dc-e0fd99677606)
 
 ## What is this
 
@@ -8,7 +7,7 @@ This site contains a boat load of manifest files that I have written (and some r
 
 ## Why do this
 
-I am string for my [CKA](https://documentation.breadnet.co.uk/certifications/cka/) and want to also have a load of examples to hand when ever I need
+I am studying for my [CKA](https://documentation.breadnet.co.uk/certifications/cka/) and want to also have a load of examples to hand when ever I need
 
 ## How this site works
 

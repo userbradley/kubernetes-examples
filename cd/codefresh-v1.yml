@@ -1,33 +1,46 @@
 version: "1.0"
 stages:
+  - "clone"
   - "setup"
-  - "mkdocs-build"
+  - "docker"
   - "deploy"
 
 steps:
   clone:
     title: "Cloning repository"
     type: "git-clone"
-    repo: "userbradley/kubernetes-manifests-site"
+    repo: "userbradley/kubernetes-examples"
     revision: "${{CF_BRANCH}}"
     git: "github"
-    stage: "setup"
+    stage: "clone"
 
-  build_mkdocs:
-    title: Build Mkdocs site
-    stage: "mkdocs-build"
-    image: "squidfunk/mkdocs-material"
-    working_directory: "/codefresh/volume/kubernetes-manifests-site"
-    cmd:
-      - "build"
 
-  transfer:
-    title: "SCP to web server"
-    type: "freestyle"
+  setup:
+    type: parallel
+    stage: setup
+    steps:
+      fly-env:
+        title: "Fly API Env"
+        stage: "setup"
+        image: alpine
+        commands:
+          - export FLY_API_TOKEN=${{FLY_API_TOKEN}}
+          - cf_export FLY_API_TOKEN
+
+  prod-flyregistry-build:
+    title: "PROD Fly Build"
+    type: "build"
+    working_directory: "${{clone}}"
+    image_name: "dk8-manifests"
+    tag: "${{CF_SHORT_REVISION}}"
+    dockerfile: "Dockerfile"
+    stage: "docker"
+    registry: fly
+
+  deploy-prod:
+    title: "PROD Fly Deployment"
     stage: "deploy"
-    image: "ictu/sshpass:latest"
+    image: "userbradley/flyctl:latest"
+    working_directory: "${{clone}}"
     commands:
-      - "mkdir /.ssh"
-      - "echo ${{codefresh_ssh_key}} | base64 -d > /.ssh/id_rsa"
-      - "chmod 600 /.ssh/id_rsa"
-      - scp -o "StrictHostKeyChecking no" -i /.ssh/id_rsa -r /codefresh/volume/kubernetes-manifests-site/site/* "${{server}}"/kube-site
+      - flyctl deploy --config k8-manifests.toml --image registry.fly.io/k8-manifests:${{CF_SHORT_REVISION}} --detach
